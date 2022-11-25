@@ -1,36 +1,27 @@
 package com.example.springjpa.domain;
 
-import com.example.springjpa.dto.BookResponse;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
 @Entity
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "book")
-public class Book {
+
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String name;
-
-//    private Long authorId;
-
+    private Integer id;
+    private String title;
+    private String content;
+    private String userName;
 
     @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
-
-    @OneToOne
-    @JoinColumn(name = "publisher_id")
-    private Publisher publisher;
-
+    @JoinColumn(name = "hospital_id")
+    private Hospital hospital;
 
 }
-

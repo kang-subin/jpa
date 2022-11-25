@@ -1,8 +1,6 @@
 package com.example.springjpa.controller;
 
-import com.example.springjpa.controller.service.BookService;
 import com.example.springjpa.dto.BookResponse;
-import com.example.springjpa.repository.BookRepository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +13,9 @@ import java.util.List;
 @RequestMapping("/api/v1/books")
 public class BookController {
 
-    private final BookService bookService;
+    private final com.example.springjpa.service.bookService bookService;
 
-    public BookController(BookService bookService) {
+    public BookController(com.example.springjpa.service.bookService bookService) {
         this.bookService = bookService;
     }
 
