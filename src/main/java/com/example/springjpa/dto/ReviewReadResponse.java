@@ -13,5 +13,5 @@ public class ReviewReadResponse {
     private String title;
     private String content;
     private String patientName;
- ///   private String hospitalName;
+    private String hospitalName;
 }

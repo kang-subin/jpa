@@ -15,7 +15,7 @@ public class Hospital {
     @Id
     private Integer id;
     private String roadNameAddress;
-    private String hospitalName;
+    private String Name;
 
     @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY)
     private List<Review> reviews;
