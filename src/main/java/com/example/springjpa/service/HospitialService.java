@@ -62,6 +62,7 @@ public class HospitialService {
                 .orElseThrow(()-> new IllegalArgumentException("해당 id가 없습니다."));
         List<ReviewReadResponse> reviews = reviewRepository.findByHospital(Optional.ofNullable(hospital))
                     .stream().map(review -> ReviewReadResponse.builder()
+                            .id(review.getId())
                             .title(review.getTitle())
                             .content(review.getContent())
                             .patientName(review.getUserName())
